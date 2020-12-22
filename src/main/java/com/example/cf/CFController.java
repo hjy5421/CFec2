@@ -9,4 +9,9 @@ public class CFController {
     public String test(){
         return "climbing friends server";
     }
+
+    @GetMapping("/")
+    public String test2(){
+        return "hello";
+    }
 }
