@@ -6,12 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CFController {
     @GetMapping("/cf")
-    public String test(){
+    public String test() {
         return "climbing friends server";
     }
 
-    @GetMapping("/")
-    public String test2(){
-        return "hello";
-    }
 }
