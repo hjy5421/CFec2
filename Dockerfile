@@ -1,14 +1,20 @@
-FROM gradle:4.7.0-jdk8-alpine
-COPY --chown=gradle:gradle . .
-RUN chmod +x ./gradlew
-RUN ./gradlew build
-COPY build/libs/*.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","app.jar"]
+FROM java:8
 
-#FROM gradle:6.7.1-jdk8 AS build
-#COPY --chown=gradle:gradle . .
-#RUN chmod +x ./gradlew
-#RUN ./gradlew jibDockerBuild
-#EXPOSE 8080
-#ENTRYPOINT ["java","-jar","app.jar"]
+# Add Author info
+LABEL maintainer="f.softwareengineer@gmail.com"
+
+# Add a volume to /tmp
+#VOLUME /tmp
+
+# Make port 8080 available to the world outside this container
+EXPOSE 8080
+
+# The application's jar file
+#ARG JAR_FILE=build/libs/CFec2-0.0.1-SNAPSHOT.jar
+
+# Add the application's jar to the container
+ADD build/libs/cf-0.0.1-SNAPSHOT.jar climbingfriends.jar
+
+# Run the jar file
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/climbingfriedns.jar"]
+
