@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class CFController {
     @GetMapping("/cf")
     public String test() {
+        String test="hi";
         return "climbing friends server";
     }
+
 
 }
