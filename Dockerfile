@@ -16,5 +16,6 @@ EXPOSE 8080
 ADD build/libs/cf-0.0.1-SNAPSHOT.jar climbingfriends.jar
 
 # Run the jar file
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/climbingfriedns.jar"]
+#ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/climbingfriedns.jar"]
+ENTRYPOINT ["java","-jar","/climbingfriedns.jar"]
 
