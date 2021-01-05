@@ -1,4 +1,4 @@
-FROM java:11
+FROM java:8
 
 # Add Author info
 LABEL maintainer="f.softwareengineer@gmail.com"
